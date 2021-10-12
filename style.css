@@ -1,0 +1,55 @@
+
+.flex {
+    display: flex;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+    background: black;
+}
+
+* {
+    text-align: center;
+}
+
+#comments {
+    height: 35px;
+    padding-top: 23px;
+    margin: auto;
+    color: white;
+    font-family: 'Grenze Gotisch', cursive;
+    font-size: 1.8em;
+}
+
+#board {
+    flex-wrap: wrap;
+    width: 95%;
+    max-width: 1440px;
+    /* max-width: 1280px; */
+    
+    margin: 25px auto 0 auto;
+}
+
+#infos {
+    width: 95%;
+    height: 35px;
+    margin: 17px auto 0 auto;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Grenze Gotisch', cursive;
+    font-size: 1.8em;
+}
+
+#name {
+    position: relative;
+    left: 0.5%;
+    color: white;
+}
+
+#level {
+    position: relative;
+    right: 1%;
+    color: white;
+}
