@@ -1,11 +1,11 @@
 
 class Player {
     constructor() {
-        this.random = Math.floor(Math.random() * 2490) + 1;
-        this.initCase = document.getElementById(this.random);
+        this.random = Math.floor(Math.random() * rooms.surfaces.length) + 1;
+        this.initCase = document.getElementById(rooms.surfaces[this.random]);
         this.firstMove;
         this.actualMove;
-        this.nextMove = document.getElementById(this.random);
+        this.nextMove = document.getElementById(rooms.surfaces[this.random]);
         this.comments = document.getElementById("comments");
     }
     initPlayer() {
@@ -25,10 +25,10 @@ class Player {
                     this.nextMove.innerHTML = "@";
                 }
                 if(this.initCase.id == this.random) {
-                    this.firstMove = document.getElementById(this.random);
+                    this.firstMove = document.getElementById(rooms.surfaces[this.random]);
                     this.firstMove.style.background = "black";
                     this.firstMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(this.random - 83);
+                    this.nextMove = document.getElementById(rooms.surfaces[this.random] - 83);
                     this.nextMove.style.background = "blue";
                     this.nextMove.innerHTML = "@";
                     this.initCase = 0;
@@ -44,10 +44,10 @@ class Player {
                     this.nextMove.innerHTML = "@";
                 }
                 if(this.initCase.id == this.random) {
-                    this.firstMove = document.getElementById(this.random);
+                    this.firstMove = document.getElementById(rooms.surfaces[this.random]);
                     this.firstMove.style.background = "black";
                     this.firstMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(Number(this.random + 83));
+                    this.nextMove = document.getElementById(Number(rooms.surfaces[this.random] + 83));
                     this.nextMove.style.background = "blue";
                     this.nextMove.innerHTML = "@";
                     this.initCase = 0;
@@ -63,10 +63,10 @@ class Player {
                     this.nextMove.innerHTML = "@";
                 }
                 if(this.initCase.id == this.random) {
-                    this.firstMove = document.getElementById(this.random);
+                    this.firstMove = document.getElementById(rooms.surfaces[this.random]);
                     this.firstMove.style.background = "black";
                     this.firstMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(this.random - 1);
+                    this.nextMove = document.getElementById(rooms.surfaces[this.random] - 1);
                     this.nextMove.style.background = "blue";
                     this.nextMove.innerHTML = "@";
                     this.initCase = 0;
@@ -82,16 +82,17 @@ class Player {
                     this.nextMove.innerHTML = "@";
                 }
                 if(this.initCase.id == this.random) {
-                    this.firstMove = document.getElementById(this.random);
+                    this.firstMove = document.getElementById(rooms.surfaces[this.random]);
                     this.firstMove.style.background = "black";
                     this.firstMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(this.random + 1);
+                    this.nextMove = document.getElementById(rooms.surfaces[this.random] + 1);
                     this.nextMove.style.background = "blue";
                     this.nextMove.innerHTML = "@";
                     this.initCase = 0;
                 }
             }
             this.findObject();
+            this.findEntry();
             this.findExit();
         })
     }
@@ -104,6 +105,12 @@ class Player {
     pushObjectInInventory() {
         inventory.inventory.push({ "potion verte" : "poison violent" });
     }
+    findEntry() {
+        if(board.entry.id == this.nextMove.id) {
+            this.comments.innerHTML = "C'est bloqué, impossible de remonter... ";
+            board.createNewMapWhenEntryFounded();
+        }
+    }
     findExit() {
         if(board.exit.id == this.nextMove.id) {
             this.comments.innerHTML = "Vous descendez au niveau X ... ";
@@ -115,5 +122,6 @@ class Player {
 const player = new Player();
 player.initPlayer();
 player.movePlayer();
-//player.findObject();
-//player.findExit();
+// player.findObject();
+// player.findEntry();
+// player.findExit();
