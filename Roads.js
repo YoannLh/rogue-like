@@ -4,7 +4,7 @@ class Roads {
 
     }
     drawRoads() {
-        console.log("drawing roads");
+        //console.log("drawing roads");
     }
 }
 

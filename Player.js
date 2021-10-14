@@ -1,14 +1,15 @@
 
 class Player {
     constructor() {
-        this.random = Math.floor(Math.random() * rooms.surfaces.length) + 1;
-        this.initCase = document.getElementById(rooms.surfaces[this.random]);
+        this.random = Math.floor(Math.random() * rooms.surfacesOfRooms.length);
+        this.initCase = document.getElementById(rooms.surfacesOfRooms[this.random]);
         this.firstMove;
         this.actualMove;
-        this.nextMove = document.getElementById(rooms.surfaces[this.random]);
+        this.nextMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
         this.comments = document.getElementById("comments");
     }
     initPlayer() {
+        console.log("player div : " + rooms.surfacesOfRooms[this.random])
         this.initCase.style.background = "blue";
         this.initCase.innerHTML = "@";
     }
@@ -25,10 +26,10 @@ class Player {
                     this.nextMove.innerHTML = "@";
                 }
                 if(this.initCase.id == this.random) {
-                    this.firstMove = document.getElementById(rooms.surfaces[this.random]);
+                    this.firstMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
                     this.firstMove.style.background = "black";
                     this.firstMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(rooms.surfaces[this.random] - 83);
+                    this.nextMove = document.getElementById(rooms.surfacesOfRooms[this.random] - 83);
                     this.nextMove.style.background = "blue";
                     this.nextMove.innerHTML = "@";
                     this.initCase = 0;
@@ -44,10 +45,10 @@ class Player {
                     this.nextMove.innerHTML = "@";
                 }
                 if(this.initCase.id == this.random) {
-                    this.firstMove = document.getElementById(rooms.surfaces[this.random]);
+                    this.firstMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
                     this.firstMove.style.background = "black";
                     this.firstMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(Number(rooms.surfaces[this.random] + 83));
+                    this.nextMove = document.getElementById(Number(rooms.surfacesOfRooms[this.random] + 83));
                     this.nextMove.style.background = "blue";
                     this.nextMove.innerHTML = "@";
                     this.initCase = 0;
@@ -63,10 +64,10 @@ class Player {
                     this.nextMove.innerHTML = "@";
                 }
                 if(this.initCase.id == this.random) {
-                    this.firstMove = document.getElementById(rooms.surfaces[this.random]);
+                    this.firstMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
                     this.firstMove.style.background = "black";
                     this.firstMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(rooms.surfaces[this.random] - 1);
+                    this.nextMove = document.getElementById(rooms.surfacesOfRooms[this.random] - 1);
                     this.nextMove.style.background = "blue";
                     this.nextMove.innerHTML = "@";
                     this.initCase = 0;
@@ -82,10 +83,10 @@ class Player {
                     this.nextMove.innerHTML = "@";
                 }
                 if(this.initCase.id == this.random) {
-                    this.firstMove = document.getElementById(rooms.surfaces[this.random]);
+                    this.firstMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
                     this.firstMove.style.background = "black";
                     this.firstMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(rooms.surfaces[this.random] + 1);
+                    this.nextMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
                     this.nextMove.style.background = "blue";
                     this.nextMove.innerHTML = "@";
                     this.initCase = 0;
