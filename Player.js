@@ -18,78 +18,118 @@ class Player {
             let pressedKey = e.key;
             if(pressedKey == "ArrowUp") {
                 if(this.initCase.id != this.random) {
-                    this.actualMove = document.getElementById(this.nextMove.id);
-                    this.actualMove.style.background = "black";
-                    this.actualMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(this.actualMove.id - 83);
-                    this.nextMove.style.background = "blue";
-                    this.nextMove.innerHTML = "@";
+                    if(document.getElementById((this.nextMove.id) - 83).innerHTML == "_"
+                    || document.getElementById((this.nextMove.id) - 83).innerHTML == "|"
+                    || document.getElementById((this.nextMove.id) - 83).innerHTML == "") {
+                    } else {
+                        this.actualMove = document.getElementById(this.nextMove.id);
+                        this.actualMove.style.background = "black";
+                        this.actualMove.innerHTML = ".";
+                        this.nextMove = document.getElementById(this.actualMove.id - 83);
+                        this.nextMove.style.background = "blue";
+                        this.nextMove.innerHTML = "@";
+                    }
                 }
                 if(this.initCase.id == this.random) {
-                    this.firstMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
-                    this.firstMove.style.background = "black";
-                    this.firstMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(rooms.surfacesOfRooms[this.random] - 83);
-                    this.nextMove.style.background = "blue";
-                    this.nextMove.innerHTML = "@";
-                    this.initCase = 0;
+                    if(document.getElementById((this.nextMove.id) - 83).innerHTML == "_"
+                    || document.getElementById((this.nextMove.id) - 83).innerHTML == "|"
+                    || document.getElementById((this.nextMove.id) - 83).innerHTML == "") {
+                    } else {
+                        this.firstMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
+                        this.firstMove.style.background = "black";
+                        this.firstMove.innerHTML = ".";
+                        this.nextMove = document.getElementById(rooms.surfacesOfRooms[this.random] - 83);
+                        this.nextMove.style.background = "blue";
+                        this.nextMove.innerHTML = "@";
+                        this.initCase = 0;
+                    }
                 }
             }
             if(pressedKey == "ArrowDown") {
                 if(this.initCase.id != this.random) {
-                    this.actualMove = document.getElementById(this.nextMove.id);
-                    this.actualMove.style.background = "black";
-                    this.actualMove.innerHTML = ".";
-                    this.nextMove = document.getElementById((Number(this.actualMove.id) + 83));
-                    this.nextMove.style.background = "blue";
-                    this.nextMove.innerHTML = "@";
+                    if(document.getElementById((Number(this.nextMove.id)) + 83).innerHTML == "_"
+                    || document.getElementById((Number(this.nextMove.id)) + 83).innerHTML == "|"
+                    || document.getElementById((Number(this.nextMove.id)) + 83).innerHTML == "") {
+                    } else {
+                        this.actualMove = document.getElementById(this.nextMove.id);
+                        this.actualMove.style.background = "black";
+                        this.actualMove.innerHTML = ".";
+                        this.nextMove = document.getElementById((Number(this.actualMove.id) + 83));
+                        this.nextMove.style.background = "blue";
+                        this.nextMove.innerHTML = "@";
+                    }
                 }
                 if(this.initCase.id == this.random) {
-                    this.firstMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
-                    this.firstMove.style.background = "black";
-                    this.firstMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(Number(rooms.surfacesOfRooms[this.random] + 83));
-                    this.nextMove.style.background = "blue";
-                    this.nextMove.innerHTML = "@";
-                    this.initCase = 0;
+                    if(document.getElementById((Number(this.nextMove.id)) + 83).innerHTML == "_"
+                    || document.getElementById((Number(this.nextMove.id)) + 83).innerHTML == "|"
+                    || document.getElementById((Number(this.nextMove.id)) + 83).innerHTML == "") {
+                    } else {
+                        this.firstMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
+                        this.firstMove.style.background = "black";
+                        this.firstMove.innerHTML = ".";
+                        this.nextMove = document.getElementById(Number(rooms.surfacesOfRooms[this.random] + 83));
+                        this.nextMove.style.background = "blue";
+                        this.nextMove.innerHTML = "@";
+                        this.initCase = 0;
+                    }
                 }
             }
             if(pressedKey == "ArrowLeft") {
                 if(this.initCase.id != this.random) {
-                    this.actualMove = document.getElementById(this.nextMove.id);
-                    this.actualMove.style.background = "black";
-                    this.actualMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(this.actualMove.id - 1);
-                    this.nextMove.style.background = "blue";
-                    this.nextMove.innerHTML = "@";
+                    if(document.getElementById((this.nextMove.id) - 1).innerHTML == "_"
+                    || document.getElementById((this.nextMove.id) - 1).innerHTML == "|"
+                    || document.getElementById((this.nextMove.id) - 1).innerHTML == "") {
+                    } else {
+                        this.actualMove = document.getElementById(this.nextMove.id);
+                        this.actualMove.style.background = "black";
+                        this.actualMove.innerHTML = ".";
+                        this.nextMove = document.getElementById(this.actualMove.id - 1);
+                        this.nextMove.style.background = "blue";
+                        this.nextMove.innerHTML = "@";
+                    }
                 }
                 if(this.initCase.id == this.random) {
-                    this.firstMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
-                    this.firstMove.style.background = "black";
-                    this.firstMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(rooms.surfacesOfRooms[this.random] - 1);
-                    this.nextMove.style.background = "blue";
-                    this.nextMove.innerHTML = "@";
-                    this.initCase = 0;
+                    if(document.getElementById((this.nextMove.id) - 1).innerHTML == "_"
+                    || document.getElementById((this.nextMove.id) - 1).innerHTML == "|"
+                    || document.getElementById((this.nextMove.id) - 1).innerHTML == "") {
+                    } else {
+                        this.firstMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
+                        this.firstMove.style.background = "black";
+                        this.firstMove.innerHTML = ".";
+                        this.nextMove = document.getElementById(rooms.surfacesOfRooms[this.random] - 1);
+                        this.nextMove.style.background = "blue";
+                        this.nextMove.innerHTML = "@";
+                        this.initCase = 0;
+                    }
                 }
             }
             if(pressedKey == "ArrowRight") {
                 if(this.initCase.id != this.random) {
-                    this.actualMove = document.getElementById(this.nextMove.id);
-                    this.actualMove.style.background = "black";
-                    this.actualMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(Number(this.actualMove.id) + 1);
-                    this.nextMove.style.background = "blue";
-                    this.nextMove.innerHTML = "@";
+                    if(document.getElementById((Number(this.nextMove.id)) + 1).innerHTML == "_"
+                    || document.getElementById((Number(this.nextMove.id)) + 1).innerHTML == "|"
+                    || document.getElementById((Number(this.nextMove.id)) + 1).innerHTML == "") {
+                    } else {
+                        this.actualMove = document.getElementById(this.nextMove.id);
+                        this.actualMove.style.background = "black";
+                        this.actualMove.innerHTML = ".";
+                        this.nextMove = document.getElementById(Number(this.actualMove.id) + 1);
+                        this.nextMove.style.background = "blue";
+                        this.nextMove.innerHTML = "@";
+                    }
                 }
                 if(this.initCase.id == this.random) {
-                    this.firstMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
-                    this.firstMove.style.background = "black";
-                    this.firstMove.innerHTML = ".";
-                    this.nextMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
-                    this.nextMove.style.background = "blue";
-                    this.nextMove.innerHTML = "@";
-                    this.initCase = 0;
+                    if(document.getElementById((Number(this.nextMove.id)) + 1).innerHTML == "_"
+                    || document.getElementById((Number(this.nextMove.id)) + 1).innerHTML == "|"
+                    || document.getElementById((Number(this.nextMove.id)) + 1).innerHTML == "") {
+                    } else {
+                        this.firstMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
+                        this.firstMove.style.background = "black";
+                        this.firstMove.innerHTML = ".";
+                        this.nextMove = document.getElementById(rooms.surfacesOfRooms[this.random] + 1);
+                        this.nextMove.style.background = "blue";
+                        this.nextMove.innerHTML = "@";
+                        this.initCase = 0;
+                    }
                 }
             }
             this.findObject();
