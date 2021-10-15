@@ -5,7 +5,7 @@ class Board {
         //this.vertical = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T"];
         this.totalCases = 2490;
         this.sidesOfScreen = [];
-        this.numberOfRooms = Math.floor(Math.random() * 4) + 3;
+        this.numberOfRooms = Math.floor(Math.random() * (Math.floor(9) - Math.ceil(5) + 1)) + 5;
         //this.numberOfRooms = 3;
         //
         this.potion;

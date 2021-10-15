@@ -13,28 +13,56 @@ class Rooms {
         let rightWall;
         let leftWall;
         let upWall;
-        let doors = Math.floor(Math.random() * 4) + 1;
+        let checkIfAtLeastOneDoorExists = false;
         caseStartRoom.style.color = "white";
         caseStartRoom.innerHTML = "_";
         for(let i = 1; i < 9; i++) {
-            downWall = document.getElementById(caseStartRoom.id - i);
+            downWall = document.getElementById(Number(caseStartRoom.id) - i);
             downWall.style.color = "white";
             downWall.innerHTML = "_";
+            let door = Math.floor(Math.random() * 2 - 1) + 1;
+            if(door != 0 && i == 4) {
+                let doorOk = document.getElementById(Number(caseStartRoom.id) - i);
+                doorOk.innerHTML = "+";
+                doorOk.style.color = "yellow";
+                checkIfAtLeastOneDoorExists = true;
+            }
         }
         for(let i = 1; i <= 6; i++) {
-            rightWall = document.getElementById(caseStartRoom.id - (i * 83));
+            rightWall = document.getElementById(Number(caseStartRoom.id) - (i * 83));
             rightWall.style.color = "white";
             rightWall.innerHTML = "|";
+            let door = Math.floor(Math.random() * 2 - 1) + 1;
+            if(door != 0 && i == 3) {
+                let doorOk = document.getElementById(Number(caseStartRoom.id) - (i * 83));
+                doorOk.innerHTML = "+";
+                doorOk.style.color = "yellow";
+                checkIfAtLeastOneDoorExists = true;
+            }
         }
         for(let i = 1; i <= 6; i++) {
-            leftWall = document.getElementById(caseStartRoom.id - 8 - (i * 83));
+            leftWall = document.getElementById(Number(caseStartRoom.id) - 8 - (i * 83));
             leftWall.style.color = "white";
             leftWall.innerHTML = "|";
+            let door = Math.floor(Math.random() * 2 - 1) + 1;
+            if(door != 0 && i == 3) {
+                let doorOk = document.getElementById(Number(caseStartRoom.id) - 8 - (i * 83));
+                doorOk.innerHTML = "+";
+                doorOk.style.color = "yellow";
+                checkIfAtLeastOneDoorExists = true;
+            }
         }
         for(let i = 1; i <= 9; i++) {
-            upWall = document.getElementById(caseStartRoom.id - (6 * 83) - i + 1);
+            upWall = document.getElementById(Number(caseStartRoom.id) - (6 * 83) - i + 1);
             upWall.style.color = "white";
             upWall.innerHTML = "_";
+            let door = Math.floor(Math.random() * 2 - 1) + 1;
+            if(i == 5) {
+                // Porte systématiquement créée
+                let doorOk = document.getElementById(Number(caseStartRoom.id) - (6 * 83) - i + 1);
+                doorOk.innerHTML = "+";
+                doorOk.style.color = "yellow";
+            }
         }
         let x = Number(leftWall.id) + 1 + 83;
         console.log("x : " + x);
@@ -66,18 +94,26 @@ class Rooms {
     createRooms(sideOfScreen, numberOfRooms) {
         console.log("enter in checking colision phase");
         for(let room = 1; room <= numberOfRooms; room++) {
-            let caseStartRoom = document.getElementById(Math.floor(Math.random() * 2490 - 498) + 498);
-            console.log("start : " + caseStartRoom.id);
+            let caseStartRoom = document.getElementById(Math.floor(Math.random() * (Math.floor(2490) - Math.ceil(499) + 1)) + Math.ceil(499));
+            console.log("start : " + Number(caseStartRoom.id));
             //console.log("floor : ", Number(caseStartRoom.id) - 8);
             //console.log("right : ", Number(caseStartRoom.id) - (6 * 83));
             //console.log("left : ", Number(caseStartRoom.id) - 8 - (6 * 83));
             for(let i = 0; i < 30; i++) {
-                //console.log("gauche > " + (i * 83 + 1) + " < ??? > " + (i * 83 + 1 + 9) + " < droite");
-                while((caseStartRoom.id >= (i * 83 + 1) && caseStartRoom.id <= (i * 83 + 1 + 8))) {
-                    console.log("Probleme avec case start " + caseStartRoom.id);
-                    caseStartRoom = "";
-                    caseStartRoom = document.getElementById(Math.floor(Math.random() * 2490 - 498) + 498);
-                    console.log("new case start : " + caseStartRoom.id);
+                console.log("check if problem with start, loop " + 
+                i + 
+                ", " + 
+                "gauche >= " + 
+                (i * 83 + 1) + 
+                " < ? > " + 
+                (i * 83 + 1 + 9) + 
+                " =< droite");
+                if((Number(caseStartRoom.id) >= (i * 83 + 1) && Number(caseStartRoom.id) <= (i * 83 + 1 + 8))) {
+                    console.log("check if problem with start");
+                    console.log("Probleme avec case start " + Number(caseStartRoom.id));
+                    caseStartRoom = document.getElementById(Math.floor(Math.random() * (Math.floor(2490) - Math.ceil(499) + 1)) + Math.ceil(499));
+                    console.log("new case start : " + Number(caseStartRoom.id));
+                    i = -1;
                 }
             }
             for(let i = 0; i <= sideOfScreen.length; i++) {
