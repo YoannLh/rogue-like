@@ -1,15 +1,15 @@
 
 class Player {
     constructor() {
-        this.random = Math.floor(Math.random() * rooms.surfacesOfRooms.length);
-        this.initCase = document.getElementById(rooms.surfacesOfRooms[this.random]);
+        this.random = Math.floor(Math.random() * rooms.surfacesOfRoomsForSpawnObjects.length);
+        this.initCase = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[this.random]);
         this.firstMove;
         this.actualMove;
-        this.nextMove = document.getElementById(rooms.surfacesOfRooms[this.random]);
+        this.nextMove = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[this.random]);
         this.comments = document.getElementById("comments");
     }
     initPlayer() {
-        console.log("player div : " + rooms.surfacesOfRooms[this.random])
+        console.log("player div : " + rooms.surfacesOfRoomsForSpawnObjects[this.random])
         this.initCase.style.background = "blue";
         this.initCase.innerHTML = "@";
     }

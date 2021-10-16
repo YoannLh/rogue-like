@@ -5,7 +5,7 @@ class Board {
         //this.vertical = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T"];
         this.totalCases = 2490;
         this.sidesOfScreen = [];
-        this.numberOfRooms = Math.floor(Math.random() * (Math.floor(9) - Math.ceil(5) + 1)) + 5;
+        this.numberOfRooms = Math.floor(Math.random() * (Math.floor(10) - Math.ceil(5) + 1)) + 5;
         //this.numberOfRooms = 3;
         //
         this.potion;
@@ -68,20 +68,20 @@ class Board {
         rooms.createRooms(this.sidesOfScreen, this.numberOfRooms);
     }
     drawEntry() {
-        let randomCaseEntry = Math.floor(Math.random() * rooms.surfacesOfRooms.length) + 1;
-        this.entry = document.getElementById(rooms.surfacesOfRooms[randomCaseEntry]);
+        let randomCaseEntry = Math.floor(Math.random() * rooms.surfacesOfRoomsForSpawnObjects.length) + 1;
+        this.entry = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[randomCaseEntry]);
         console.log("entry div : " + randomCaseEntry)
         this.entry.style.background = "orange";
     }
     drawExit() {
-        let randomCaseExit = Math.floor(Math.random() * rooms.surfacesOfRooms.length) + 1;
-        this.exit = document.getElementById(rooms.surfacesOfRooms[randomCaseExit]);
+        let randomCaseExit = Math.floor(Math.random() * rooms.surfacesOfRoomsForSpawnObjects.length) + 1;
+        this.exit = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[randomCaseExit]);
         console.log("exit div : " + randomCaseExit)
         this.exit.style.background = "red";
     }
     drawPotion() {
-        let randomPotion = Math.floor(Math.random() * rooms.surfacesOfRooms.length) + 1;
-        this.potion = document.getElementById(rooms.surfacesOfRooms[randomPotion]);
+        let randomPotion = Math.floor(Math.random() * rooms.surfacesOfRoomsForSpawnObjects.length) + 1;
+        this.potion = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[randomPotion]);
         console.log("potion div : " + randomPotion)
         this.potion.style.background = "green";
     }
