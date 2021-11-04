@@ -1,7 +1,6 @@
 
-// todo
+// TODO
 // * Les portes doivent servir de points de collision au même titre que les angles (sinon les grandes salles "mangent" les petites)
-// * Probleme portes du haut décallée
 // * Empecher les salles de se coller aux sides, sinon portes obsolètes
 
 class Rooms {
@@ -38,6 +37,9 @@ class Rooms {
                 let doorOk = document.getElementById(Number(caseStartRoom.id) - i);
                 doorOk.innerHTML = "+";
                 doorOk.style.color = "yellow";
+                let path = document.getElementById(Number(caseStartRoom.id) - i + 83);
+                path.innerHTML = "#";
+                path.style.color = "white";
             }
         }
         //for(let i = 1; i <= 6; i++) {
@@ -50,6 +52,9 @@ class Rooms {
                 let doorOk = document.getElementById(Number(caseStartRoom.id) - (i * 83));
                 doorOk.innerHTML = "+";
                 doorOk.style.color = "yellow";
+                let path = document.getElementById(Number(caseStartRoom.id) - (i * 83) + 1);
+                path.innerHTML = "#";
+                path.style.color = "white";
             }
         }
         //for(let i = 1; i <= 6; i++) {
@@ -62,6 +67,9 @@ class Rooms {
                 let doorOk = document.getElementById(Number(caseStartRoom.id) - sizeRoom.width - (i * 83));
                 doorOk.innerHTML = "+";
                 doorOk.style.color = "yellow";
+                let path = document.getElementById(Number(caseStartRoom.id) - sizeRoom.width - (i * 83) - 1);
+                path.innerHTML = "#";
+                path.style.color = "white";
             }
         }
         //for(let i = 1; i <= 9; i++) {
@@ -71,11 +79,15 @@ class Rooms {
             upWall.innerHTML = "_";
             let door = Math.floor(Math.random() * 2 - 1) + 1;
             //if(Math.ceil())
-            if(i == sizeRoom.width / 2) {
+            if(i == sizeRoom.width / 2 + 1) {
                 // Door systématiquement créée
                 let doorOk = document.getElementById(Number(caseStartRoom.id) - (sizeRoom.height * 83) - i + 1);
                 doorOk.innerHTML = "+";
                 doorOk.style.color = "yellow";
+                let path = document.getElementById(Number(caseStartRoom.id) - (sizeRoom.height * 83) - i + 1 - 83);
+                //console.log("path up : ", path.id);
+                path.innerHTML = "#";
+                path.style.color = "white";
             }
         }
         let xForNoCollisionWithOthersRooms = Number(leftWall.id) - 1 - 83;
@@ -107,7 +119,7 @@ class Rooms {
             this.surfacesOfRoomsForSpawnObjects.push(xForSpawnObjects);
             let pointForSpawnObject = document.getElementById(xForSpawnObjects);
             pointForSpawnObject.innerHTML = ".";
-            pointForSpawnObject.style.color = "white";
+            //pointForSpawnObject.style.color = "white";
             xForSpawnObjects++;
             totalCasesForSpawnObjects++;
             if(i == sizeRoom.width - 1) {
@@ -125,7 +137,7 @@ class Rooms {
         for(let room = 1; room <= numberOfRooms; room++) {
             let choiceOfSizeRoom = Math.floor(Math.random() * 4 - 1) + 1;
             let sizeRoom = this.widthsHeightsAndLimitStartingPoint[choiceOfSizeRoom];
-            console.log("SIZEROOM : ", sizeRoom);
+            //console.log("SIZEROOM : ", sizeRoom);
             let caseStartRoom = document.getElementById(Math.floor(Math.random() * (Math.floor(this.totalCases) - Math.ceil(sizeRoom.limitUpStart) + 1)) + Math.ceil(sizeRoom.limitUpStart));
             console.log("START : " + Number(caseStartRoom.id));
             for(let i = 0; i < 30; i++) {
@@ -150,11 +162,11 @@ class Rooms {
                 this.drawRoom(caseStartRoom, sizeRoom);    
             }
             if(rebuild) {
-                console.log("this.surfacesForNoCollisionWithOthersRooms.length : " + this.surfacesForNoCollisionWithOthersRooms.length);
+                //console.log("this.surfacesForNoCollisionWithOthersRooms.length : " + this.surfacesForNoCollisionWithOthersRooms.length);
                 console.log(Number(caseStartRoom.id));
-                console.log(Number(caseStartRoom.id) - sizeRoom.width);
-                console.log(Number(caseStartRoom.id) - (sizeRoom.height * 83));
-                console.log(Number(caseStartRoom.id) - sizeRoom.width - (sizeRoom.height * 83));   
+                //console.log(Number(caseStartRoom.id) - sizeRoom.width);
+                //console.log(Number(caseStartRoom.id) - (sizeRoom.height * 83));
+                //console.log(Number(caseStartRoom.id) - sizeRoom.width - (sizeRoom.height * 83));   
                 console.log("PROBLEM WITH OTHERS SURFACES, need to create a new start of room");
                 rebuild = false;
                 room--;   
