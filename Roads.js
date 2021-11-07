@@ -22,11 +22,11 @@ class Roads {
             //console.log("path1 : ", path1)
             let path2;
             if(i == this.allPaths.length - 1) {
-                path2 = this.allPaths[i - 2];
+                path2 = this.allPaths[i];
             } else {
                 path2 = this.allPaths[i + 3];
             }
-            //console.log("path2 : ", path2)
+            //console.log("PATH 2 : ", path2)
             let yRoad;
             let xRoad;
             let yPath2;

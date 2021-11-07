@@ -9,8 +9,10 @@ class Player {
     initPlayer() {
         this.temp = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[this.random]).innerHTML;
         this.player = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[this.random]);
-        this.player.style.background = "blue";
+        //this.player.style.background = "blue";
+        this.player.style.color = "white";
         this.player.innerHTML = "@";
+        this.player.style.fontSize = "1.3em";
     }
     movePlayer() {
         document.addEventListener("keydown", (e) => {
@@ -22,10 +24,12 @@ class Player {
                 } else {
                     document.getElementById(this.player.id).innerHTML = this.temp;
                     document.getElementById(this.player.id).style.background = "black";
+                    document.getElementById(this.player.id).style.fontSize = "1em";
                     this.temp = document.getElementById(Number(this.player.id) - 83).innerHTML;
                     this.player = document.getElementById(Number(this.player.id) - 83);
-                    this.player.style.background = "blue";
+                    //this.player.style.background = "blue";
                     this.player.innerHTML = "@";
+                    this.player.style.fontSize = "1.3em";
                 }
                 fogOfWar.render("up");
             }
@@ -36,10 +40,12 @@ class Player {
                 } else {
                     document.getElementById(this.player.id).innerHTML = this.temp;
                     document.getElementById(this.player.id).style.background = "black";
+                    document.getElementById(this.player.id).style.fontSize = "1em";
                     this.temp = document.getElementById(Number(this.player.id) + 83).innerHTML;
                     this.player = document.getElementById(Number(this.player.id) + 83);
-                    this.player.style.background = "blue";
+                    //this.player.style.background = "blue";
                     this.player.innerHTML = "@";
+                    this.player.style.fontSize = "1.3em";
                 }
                 fogOfWar.render("down");
             }
@@ -50,10 +56,12 @@ class Player {
                 } else {
                     document.getElementById(this.player.id).innerHTML = this.temp;
                     document.getElementById(this.player.id).style.background = "black";
+                    document.getElementById(this.player.id).style.fontSize = "1em";
                     this.temp = document.getElementById(Number(this.player.id) - 1).innerHTML;
                     this.player = document.getElementById(Number(this.player.id) - 1);
-                    this.player.style.background = "blue";
+                    //this.player.style.background = "blue";
                     this.player.innerHTML = "@";
+                    this.player.style.fontSize = "1.3em";
                 }
                 fogOfWar.render("left");
             }
@@ -64,10 +72,12 @@ class Player {
                 } else {
                     document.getElementById(this.player.id).innerHTML = this.temp;
                     document.getElementById(this.player.id).style.background = "black";
+                    document.getElementById(this.player.id).style.fontSize = "1em";
                     this.temp = document.getElementById(Number(this.player.id) + 1).innerHTML;
                     this.player = document.getElementById(Number(this.player.id) + 1);
-                    this.player.style.background = "blue";
+                    //this.player.style.background = "blue";
                     this.player.innerHTML = "@";
+                    this.player.style.fontSize = "1.3em";
                 }
                 fogOfWar.render("right");
             }

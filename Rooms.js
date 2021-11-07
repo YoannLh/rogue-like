@@ -23,7 +23,7 @@ class Rooms {
         //
     }
     drawRoom(caseStartRoom, sizeRoom) {
-        console.log("ENTER IN DRAWING PHASE");
+        //console.log("ENTER IN DRAWING PHASE");
         let downWall;
         let rightWall;
         let leftWall;
@@ -121,10 +121,10 @@ class Rooms {
             }
         }
         let xForSpawnObjects = Number(leftWall.id) + 1 + 83;
-        console.log("x : " + xForSpawnObjects);
+        //console.log("x : " + xForSpawnObjects);
         let tempForSpawnObjects = xForSpawnObjects;
         let yForSpawnObjects = Number(caseStartRoom.id) - 83 - 1;
-        console.log("y : " + yForSpawnObjects);
+        //console.log("y : " + yForSpawnObjects);
         let totalCasesForSpawnObjects = 1;
         let countForSpawnObjects = 1;
         for(let i = 1; i <= sizeRoom.width - 1; i++) {
@@ -143,19 +143,21 @@ class Rooms {
                 i = sizeRoom.width - 1;
             }
         }
-        console.log("ROOM CREEE !");
+        //console.log("ROOM CREEE !");
     }
     createRooms(sideOfScreen, numberOfRooms) {
         for(let room = 1; room <= numberOfRooms; room++) {
             let choiceOfSizeRoom = Math.floor(Math.random() * 4 - 1) + 1;
             let sizeRoom = this.widthsHeightsAndLimitStartingPoint[choiceOfSizeRoom];
-            //console.log("SIZEROOM : ", sizeRoom);
             let caseStartRoom = document.getElementById(Math.floor(Math.random() * (Math.floor(this.totalCases) - Math.ceil(sizeRoom.limitUpStart) + 1)) + Math.ceil(sizeRoom.limitUpStart));
-            console.log("START : " + Number(caseStartRoom.id));
+            //console.log("START : " + Number(caseStartRoom.id));
             for(let i = 0; i < 30; i++) {
-                if((Number(caseStartRoom.id) >= (i * 83 + 1) && Number(caseStartRoom.id) <= (i * 83 + 1 + sizeRoom.limitLeftStart))) {
+                if(Number(caseStartRoom.id) >= 0 && Number(caseStartRoom.id) <= 829
+                || Number(caseStartRoom.id) >= (i * 83 + 1) && Number(caseStartRoom.id) <= (i * 83 + 1 + sizeRoom.limitLeftStart)
+                || (Number(caseStartRoom.id) == (i * 83 + 83))
+                || (Number(caseStartRoom.id) >= 2408 && Number(caseStartRoom.id) <= 2490)) {
                     caseStartRoom = document.getElementById(Math.floor(Math.random() * (Math.floor(this.totalCases) - Math.ceil(sizeRoom.limitUpStart) + 1)) + Math.ceil(sizeRoom.limitUpStart));
-                    console.log("NEW CASE START : " + Number(caseStartRoom.id));
+                    //console.log("NEW CASE START : " + Number(caseStartRoom.id));
                     i = -1;
                 }
             }
@@ -165,12 +167,12 @@ class Rooms {
                 || this.surfacesForNoCollisionWithOthersRooms[i] == Number(caseStartRoom.id) - sizeRoom.width 
                 || this.surfacesForNoCollisionWithOthersRooms[i] == Number(caseStartRoom.id) - (sizeRoom.height * 83)
                 || this.surfacesForNoCollisionWithOthersRooms[i] == Number(caseStartRoom.id) - sizeRoom.width - (sizeRoom.height * 83)) {
-                    console.log("this.surfacesForNoCollisionWithOthersRooms i : ", this.surfacesForNoCollisionWithOthersRooms[i]);
+                    //console.log("this.surfacesForNoCollisionWithOthersRooms i : ", this.surfacesForNoCollisionWithOthersRooms[i]);
                     rebuild = true;  
                 } 
             }
             if(!rebuild) {
-                console.log("SURFACE OK POUR DRAWING !");
+                //console.log("SURFACE OK POUR DRAWING !");
                 this.drawRoom(caseStartRoom, sizeRoom);    
             }
             if(rebuild) {
