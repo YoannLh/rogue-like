@@ -3,7 +3,7 @@ class Roads {
     constructor() {
         this.totalCases = 2490;
         this.allPaths = [];
-        this.arrayRoad = [];
+        this.allRoads = [];
     }
     getAllPaths() {
         for(let i = 1; i <= this.totalCases; i++) {
@@ -44,7 +44,9 @@ class Roads {
                 }
             }
             let directions = [-1, +1, -83, +83];
-            road.style.background = "green";
+            //
+            //road.style.background = "green";
+            //
             //console.log("beginning road.id : " + road.id);
             //console.log("ypath2 : " + yPath2);
             //console.log("xpath2 : " + xPath2)
@@ -81,7 +83,7 @@ class Roads {
                     up = false
                     if(down && document.getElementById(Number(road.id) + directions[3]).innerHTML == "") {
                         pieceOfRoadForUp = document.getElementById(Number(road.id) - 83)
-                        //pieceOfRoadForUp.style.background = "yellow"
+                        //pieceOfRoadForUp.style.background = "grey"
                         if(pieceOfRoadForUp.innerHTML == "_" 
                         || pieceOfRoadForUp.innerHTML == "+"
                         || pieceOfRoadForUp.innerHTML == "."
@@ -90,8 +92,11 @@ class Roads {
                         }
                         if(pieceOfRoadForUp.innerHTML == "") {
                             pieceOfRoadForUp.style.zIndex = "-1"
-                            //pieceOfRoadForUp.style.color = "white"
+                            //pieceOfRoadForUp.style.color = "grey"
                             pieceOfRoadForUp.innerHTML = "#"
+                            //
+                            this.allRoads.push(pieceOfRoadForUp.id);
+                            //
                         }
                         down = false;
                     }
@@ -99,8 +104,11 @@ class Roads {
                 //road.style.background = "green"
                 if(road.innerHTML == "") {
                     road.style.zIndex = "-1"
-                    //road.style.color = "white"
+                    //road.style.color = "grey"
                     road.innerHTML = "#"
+                    //
+                    this.allRoads.push(road.id);
+                    //
                 }
                 if(road.innerHTML == "."
                 || road.innerHTML == "+") {
@@ -117,7 +125,9 @@ class Roads {
                     }    
                 }
                 if(road.innerHTML == "|") {
-                    road.style.background = "red"
+                    //
+                    //road.style.background = "red"
+                    //
                     // if(up) {
                     //     road = document.getElementById(Number(road.id) + directions[2] + 83)
                     // }

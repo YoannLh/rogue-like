@@ -27,7 +27,7 @@ class Player {
                     this.player.style.background = "blue";
                     this.player.innerHTML = "@";
                 }
-                this.fogOfWar("up");
+                fogOfWar.render("up");
             }
             if(pressedKey == "ArrowDown") {
                 if(document.getElementById((Number(this.player.id)) + 83).innerHTML == "_"
@@ -41,7 +41,7 @@ class Player {
                     this.player.style.background = "blue";
                     this.player.innerHTML = "@";
                 }
-                this.fogOfWar("down");
+                fogOfWar.render("down");
             }
             if(pressedKey == "ArrowLeft") {
                 if(document.getElementById((this.player.id) - 1).innerHTML == "_"
@@ -55,7 +55,7 @@ class Player {
                     this.player.style.background = "blue";
                     this.player.innerHTML = "@";
                 }
-                this.fogOfWar("left");
+                fogOfWar.render("left");
             }
             if(pressedKey == "ArrowRight") {    
                 if(document.getElementById((Number(this.player.id)) + 1).innerHTML == "_"
@@ -69,7 +69,7 @@ class Player {
                     this.player.style.background = "blue";
                     this.player.innerHTML = "@";
                 }
-                this.fogOfWar("right");
+                fogOfWar.render("right");
             }
             this.findObject();
             this.findEntry();
@@ -96,60 +96,6 @@ class Player {
             this.comments.innerHTML = "Vous descendez au niveau X ... ";
             board.createNewMapWhenExitFounded();
         }
-    }
-    fogOfWar(direction) {
-        console.log("fog");
-        for(let i = 1; i <= 7; i++) {
-            document.getElementById(Number(this.player.id) - 83 * i).style.color = "white";
-            document.getElementById(Number(this.player.id) + 83 * i).style.color = "white";
-            document.getElementById(Number(this.player.id) - 1 * i).style.color = "white";
-            document.getElementById(Number(this.player.id) + 1 * i).style.color = "white";
-        }
-        if(direction == "up") {
-            for(let i = 1; i <= 7; i++) {
-                if(document.getElementById(Number(this.player.id) - 83 * i).innerHTML == "_") {
-                    //document.getElementById(Number(this.player.id) - 83 * i - 83).style.color = "blue";
-                } else {
-                    //document.getElementById(Number(this.player.id) - 83 * i).style.color = "white";
-                }
-            }
-        }
-        if(direction == "down") {
-            for(let i = 1; i <= 7; i++) {
-                if(document.getElementById(Number(this.player.id) + 83 * i).innerHTML == "_") {
-                } else {
-                    //document.getElementById(Number(this.player.id) + 83 * i).style.color = "blue";
-                }
-            }       
-        }
-        if(direction == "left") {
-            for(let i = 1; i <= 7; i++) {
-                if(document.getElementById(Number(this.player.id) - 1 * i).innerHTML == "|") {
-                } else {
-                    //document.getElementById(Number(this.player.id) - 1 * i).style.color = "blue";
-                }
-            }   
-        }
-        if(direction == "right") {
-            for(let i = 1; i <= 7; i++) {
-                if(document.getElementById(Number(this.player.id) + 1 * i).innerHTML == "|") {
-                } else {
-                    //document.getElementById(Number(this.player.id) + 1 * i).style.color = "blue";
-                }
-            }   
-        }
-        // for(let i = 1; i <= 7; i++) {
-        //     document.getElementById(Number(this.player.id) - 83 * i).style.color = "white";
-        //     document.getElementById(Number(this.player.id) + 83 * i).style.color = "white";
-        //     document.getElementById(Number(this.player.id) - 1 * i).style.color = "white";
-        //     document.getElementById(Number(this.player.id) + 1 * i).style.color = "white";
-        // }
-        // document.getElementById(Number(this.player.id) - 83 * i - 83 - i).style.color = "white";
-        // document.getElementById(Number(this.player.id) - 83 * i - 83 + i).style.color = "white";
-        // document.getElementById(Number(this.player.id) + 83 * i + 83 + i).style.color = "white";
-        // document.getElementById(Number(this.player.id) + 83 * i + 83 - i).style.color = "white";
-        //document.getElementById(Number(this.player.id) - 1 * i - 1 - i).style.color = "white";
-        //document.getElementById(Number(this.player.id) + 1 * i + 1 + i).style.color = "white"
     }
 }
 

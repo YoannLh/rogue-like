@@ -17,6 +17,10 @@ class Rooms {
         this.surfacesOfRoomsForSpawnObjects = [];
         this.surfacesForNoCollisionWithOthersRooms = [];
         this.roomsWithTheirSurfaces = [];
+        //
+        this.allWalls = [];
+        this.allPaths = [];
+        //
     }
     drawRoom(caseStartRoom, sizeRoom) {
         console.log("ENTER IN DRAWING PHASE");
@@ -25,69 +29,77 @@ class Rooms {
         let leftWall;
         let upWall;
         //let checkIfAtLeastOneDoorExists;
-        caseStartRoom.style.color = "white";
+        //caseStartRoom.style.color = "grey";
         caseStartRoom.innerHTML = "_";
         //for(let i = 1; i < 9; i++) {
         for(let i = 1; i < sizeRoom.width + 1; i++) {
             downWall = document.getElementById(Number(caseStartRoom.id) - i);
-            downWall.style.color = "white";
+            this.allWalls.push(downWall.id);
+            //downWall.style.color = "grey";
             downWall.innerHTML = "_";
             let door = Math.floor(Math.random() * 2 - 1) + 1;
             if(door != 0 && i == sizeRoom.width / 2) {
                 let doorOk = document.getElementById(Number(caseStartRoom.id) - i);
                 doorOk.innerHTML = "+";
-                doorOk.style.color = "yellow";
+                //doorOk.style.color = "yellow";
                 let path = document.getElementById(Number(caseStartRoom.id) - i + 83);
                 path.innerHTML = "#";
-                path.style.color = "white";
+                //path.style.color = "grey";
+                this.allPaths.push(path.id);
             }
         }
         //for(let i = 1; i <= 6; i++) {
         for(let i = 1; i <= sizeRoom.height; i++) {
             rightWall = document.getElementById(Number(caseStartRoom.id) - (i * 83));
-            rightWall.style.color = "white";
+            //rightWall.style.color = "grey";
             rightWall.innerHTML = "|";
+            this.allWalls.push(rightWall.id);
             let door = Math.floor(Math.random() * 2 - 1) + 1;
             if(door != 0 && i == sizeRoom.height / 2) {
                 let doorOk = document.getElementById(Number(caseStartRoom.id) - (i * 83));
                 doorOk.innerHTML = "+";
-                doorOk.style.color = "yellow";
+                //doorOk.style.color = "yellow";
                 let path = document.getElementById(Number(caseStartRoom.id) - (i * 83) + 1);
                 path.innerHTML = "#";
-                path.style.color = "white";
+                //path.style.color = "grey";
+                this.allPaths.push(path.id);
             }
         }
         //for(let i = 1; i <= 6; i++) {
         for(let i = 1; i <= sizeRoom.height; i++) {
             leftWall = document.getElementById(Number(caseStartRoom.id) - sizeRoom.width - (i * 83));
-            leftWall.style.color = "white";
+            //leftWall.style.color = "grey";
             leftWall.innerHTML = "|";
+            this.allWalls.push(leftWall.id);
             let door = Math.floor(Math.random() * 2 - 1) + 1;
             if(door != 0 && i == sizeRoom.height / 2) {
                 let doorOk = document.getElementById(Number(caseStartRoom.id) - sizeRoom.width - (i * 83));
                 doorOk.innerHTML = "+";
-                doorOk.style.color = "yellow";
+                //doorOk.style.color = "yellow";
                 let path = document.getElementById(Number(caseStartRoom.id) - sizeRoom.width - (i * 83) - 1);
                 path.innerHTML = "#";
-                path.style.color = "white";
+                //path.style.color = "grey";
+                this.allPaths.push(path.id);
             }
         }
         //for(let i = 1; i <= 9; i++) {
         for(let i = 1; i <= sizeRoom.width + 1; i++) {
             upWall = document.getElementById(Number(caseStartRoom.id) - (sizeRoom.height * 83) - i + 1);
-            upWall.style.color = "white";
+            //upWall.style.color = "grey";
             upWall.innerHTML = "_";
+            this.allWalls.push(upWall.id);
             let door = Math.floor(Math.random() * 2 - 1) + 1;
             //if(Math.ceil())
             if(i == sizeRoom.width / 2 + 1) {
                 // Door systématiquement créée
                 let doorOk = document.getElementById(Number(caseStartRoom.id) - (sizeRoom.height * 83) - i + 1);
                 doorOk.innerHTML = "+";
-                doorOk.style.color = "yellow";
+                //doorOk.style.color = "yellow";
                 let path = document.getElementById(Number(caseStartRoom.id) - (sizeRoom.height * 83) - i + 1 - 83);
                 //console.log("path up : ", path.id);
                 path.innerHTML = "#";
-                path.style.color = "white";
+                //path.style.color = "grey";
+                this.allPaths.push(path.id);
             }
         }
         let xForNoCollisionWithOthersRooms = Number(leftWall.id) - 1 - 83;
@@ -119,7 +131,7 @@ class Rooms {
             this.surfacesOfRoomsForSpawnObjects.push(xForSpawnObjects);
             let pointForSpawnObject = document.getElementById(xForSpawnObjects);
             pointForSpawnObject.innerHTML = ".";
-            //pointForSpawnObject.style.color = "white";
+            //pointForSpawnObject.style.color = "grey";
             xForSpawnObjects++;
             totalCasesForSpawnObjects++;
             if(i == sizeRoom.width - 1) {
