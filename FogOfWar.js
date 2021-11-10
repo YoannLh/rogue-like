@@ -25,14 +25,356 @@ class FogOfWar {
         for(const el of this.alreadySeenCases) {
             document.getElementById(el).style.color = "grey";
         }
-        for(let height = 3; height > -4; height--) {
-            for(let length = 0; length <= 6; length++) {
-                let pieceOfFog = document.getElementById(((Number(player.player.id) - 83 * height) - 3) + length);
+        // for(let height = 3; height > -4; height--) {
+        //     for(let length = 0; length <= 6; length++) {
+        //         let pieceOfFog = document.getElementById(((Number(player.player.id) - 83 * height) - 3) + length);
+        //         pieceOfFog.style.color = "white";
+        //         this.fog.push(pieceOfFog.id);
+        //         this.alreadySeenCases.push(pieceOfFog.id);
+        //     }
+        // }
+        let visible = true;
+        // const directions =
+        // [
+        //     { diagUpLeft : Number(player.player.id) - 83 * i - i },
+        //     { up : Number(player.player.id) - 83 - i },
+        //     { diagUpRight : Number(player.player.id) - 83 * i + i },
+        //     { right : Number(player.player.id) + i },
+        //     { diagDownRight : Number(player.player.id) + 83 * i + i },
+        //     { down : Number(player.player.id) + 83 * i },
+        //     { diagDownLeft : Number(player.player.id) + 83 * i - i },
+        //     { left : Number(player.player.id) - i }
+        // ];
+        for(let i = 0; i <= 2; i++) {
+            let pieceOfFog = document.getElementById(((Number(player.player.id) - 83 * i)));
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_") {
+                visible = false;
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
-        }     
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 1; i <= 2; i++) {
+            let pieceOfFog = document.getElementById(((Number(player.player.id) - 83 * i) + (i - 1)));
+            //let pieceOfFog = document.getElementById(((Number(player.player.id) - 83 * i) + 1));
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_"
+            || pieceOfFog.innerHTML == "+") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 0; i <= 2; i++) {
+            let pieceOfFog = document.getElementById(((Number(player.player.id) - 83 * i) + i));
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 1; i <= 2; i++) {
+            let pieceOfFog = document.getElementById((Number(player.player.id) - 83 * i + 83) + i);
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_"
+            || pieceOfFog.innerHTML == "+") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 0; i <= 2; i++) {
+            let pieceOfFog = document.getElementById((Number(player.player.id) + i));
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 1; i <= 2; i++) {
+            let pieceOfFog = document.getElementById((Number(player.player.id) + 83 * i - 83) + i);
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_"
+            || pieceOfFog.innerHTML == "+") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 0; i <= 2; i++) {
+            let pieceOfFog = document.getElementById(((Number(player.player.id) + 83 * i) + i));
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 1; i <= 2; i++) {
+            let pieceOfFog = document.getElementById((Number(player.player.id) + 83 * i) + (i - 1));
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_"
+            || pieceOfFog.innerHTML == "+") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 0; i <= 2; i++) {
+            let pieceOfFog = document.getElementById(((Number(player.player.id) + 83 * i)));
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 1; i <= 2; i++) {
+            let pieceOfFog = document.getElementById((Number(player.player.id) + 83 * i) - (i - 1));
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_"
+            || pieceOfFog.innerHTML == "+") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 0; i <= 2; i++) {
+            let pieceOfFog = document.getElementById(((Number(player.player.id) + 83 * i) - i));
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 1; i <= 2; i++) {
+            let pieceOfFog = document.getElementById((Number(player.player.id) + 83 * i - 83) - i);
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_"
+            || pieceOfFog.innerHTML == "+") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 0; i <= 2; i++) {
+            let pieceOfFog = document.getElementById((Number(player.player.id) - i));
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 1; i <= 2; i++) {
+            let pieceOfFog = document.getElementById((Number(player.player.id) - 83 * i + 83) - i);
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_"
+            || pieceOfFog.innerHTML == "+") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 0; i <= 2; i++) {
+            let pieceOfFog = document.getElementById(((Number(player.player.id) - 83 * i) - i));
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
+        for(let i = 1; i <= 2; i++) {
+            let pieceOfFog = document.getElementById(((Number(player.player.id) - 83 * i) - (i - 1)));
+            //let pieceOfFog = document.getElementById(((Number(player.player.id) - 83 * i) - 1));
+            if(!visible) {
+                let color = pieceOfFog.style.color;
+                pieceOfFog.style.color = color;
+            }
+            if(pieceOfFog.innerHTML == "|"
+            || pieceOfFog.innerHTML == "_"
+            || pieceOfFog.innerHTML == "+") {
+                visible = false;
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+            if(visible) {
+                pieceOfFog.style.color = "white";
+                this.fog.push(pieceOfFog.id);
+                this.alreadySeenCases.push(pieceOfFog.id);
+            }
+        }
+        visible = true;
     }
 }
 
