@@ -67,24 +67,6 @@ class Board {
         console.log("board number of rooms : " + this.numberOfRooms);
         rooms.createRooms(this.sidesOfScreen, this.numberOfRooms);
     }
-    drawEntry() {
-        let randomCaseEntry = Math.floor(Math.random() * rooms.surfacesOfRoomsForSpawnObjects.length) + 1;
-        this.entry = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[randomCaseEntry]);
-        console.log("entry div : " + randomCaseEntry)
-        this.entry.style.background = "orange";
-    }
-    drawExit() {
-        let randomCaseExit = Math.floor(Math.random() * rooms.surfacesOfRoomsForSpawnObjects.length) + 1;
-        this.exit = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[randomCaseExit]);
-        console.log("exit div : " + randomCaseExit)
-        this.exit.style.background = "red";
-    }
-    drawPotion() {
-        let randomPotion = Math.floor(Math.random() * rooms.surfacesOfRoomsForSpawnObjects.length) + 1;
-        this.potion = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[randomPotion]);
-        console.log("potion div : " + randomPotion)
-        this.potion.style.background = "green";
-    }
     createNewMapWhenEntryFounded() {
         console.log("createNewMapWhenEntryFounded");
     }

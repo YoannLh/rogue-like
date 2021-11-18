@@ -5,6 +5,9 @@ class Player {
         this.comments = document.getElementById("comments");
         this.player;
         this.temp;
+        //
+        //this.pressedKey = tourManager.pressedKey;
+        //
     }
     initPlayer() {
         this.temp = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[this.random]).innerHTML;
@@ -15,9 +18,10 @@ class Player {
         this.player.style.fontSize = "1.3em";
     }
     movePlayer() {
-        document.addEventListener("keydown", (e) => {
-            let pressedKey = e.key;
-            if(pressedKey == "ArrowUp") {
+        //document.addEventListener("keydown", (e) => {
+            //let pressedKey = e.key;
+            if(tourManager.pressedKey == "ArrowUp") {
+                console.log("up");
                 if(document.getElementById((this.player.id) - 83).innerHTML == "_"
                 || document.getElementById((this.player.id) - 83).innerHTML == "|"
                 || document.getElementById((this.player.id) - 83).innerHTML == "") {
@@ -33,7 +37,7 @@ class Player {
                 }
                 fogOfWar.render("up");
             }
-            if(pressedKey == "ArrowDown") {
+            if(tourManager.pressedKey == "ArrowDown") {
                 if(document.getElementById((Number(this.player.id)) + 83).innerHTML == "_"
                 || document.getElementById((Number(this.player.id)) + 83).innerHTML == "|"
                 || document.getElementById((Number(this.player.id)) + 83).innerHTML == "") {
@@ -49,7 +53,7 @@ class Player {
                 }
                 fogOfWar.render("down");
             }
-            if(pressedKey == "ArrowLeft") {
+            if(tourManager.pressedKey == "ArrowLeft") {
                 if(document.getElementById((this.player.id) - 1).innerHTML == "_"
                 || document.getElementById((this.player.id) - 1).innerHTML == "|"
                 || document.getElementById((this.player.id) - 1).innerHTML == "") {
@@ -65,7 +69,7 @@ class Player {
                 }
                 fogOfWar.render("left");
             }
-            if(pressedKey == "ArrowRight") {    
+            if(tourManager.pressedKey == "ArrowRight") {    
                 if(document.getElementById((Number(this.player.id)) + 1).innerHTML == "_"
                 || document.getElementById((Number(this.player.id)) + 1).innerHTML == "|"
                 || document.getElementById((Number(this.player.id)) + 1).innerHTML == "") {
@@ -81,10 +85,10 @@ class Player {
                 }
                 fogOfWar.render("right");
             }
-            this.findObject();
-            this.findEntry();
-            this.findExit();
-        })
+            //this.findObject();
+            //this.findEntry();
+            //this.findExit();
+        //})
     }
     findObject() {
         if(board.potion.id == this.player.id) {
@@ -111,7 +115,9 @@ class Player {
 
 const player = new Player();
 player.initPlayer();
-player.movePlayer();
+//
+//player.movePlayer(); appellée dans tourmanager
+//
 // player.findObject();
 // player.findEntry();
 // player.findExit();

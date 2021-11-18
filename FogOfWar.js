@@ -59,7 +59,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                pieceOfFog.style.color = "white";
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
@@ -81,6 +83,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -101,6 +106,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -122,6 +130,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -142,6 +153,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -163,6 +177,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -183,6 +200,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -204,6 +224,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -224,6 +247,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -245,6 +271,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -265,6 +294,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -286,6 +318,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -306,6 +341,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -327,6 +365,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -347,6 +388,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
@@ -369,6 +413,9 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
+                if(pieceOfFog.style.color == "") {
+                    pieceOfFog.style.color = "white";
+                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
