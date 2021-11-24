@@ -27,6 +27,9 @@ class Objects {
         this.graffs //runes à déchiffrer, incantations, portes dérobées, énigmes
         this.grimoires
         this.instruments
+        //
+        this.placesOfObjects = [];
+        //
     }
     render() {
 
@@ -36,27 +39,24 @@ class Objects {
         this.entry = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[randomCaseEntry]);
         console.log("entry div : " + randomCaseEntry)
         this.entry.innerHTML = "<";
-        if(fogOfWar.alreadySeenCases.find(el => el == this.entry.id)) {
-            this.entry.style.color = "red";
-        }
+        //this.entry.color = "red";
+        this.placesOfObjects.push( this.entry );
     }
     drawExit() {
         let randomCaseExit = Math.floor(Math.random() * rooms.surfacesOfRoomsForSpawnObjects.length) + 1;
         this.exit = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[randomCaseExit]);
         console.log("exit div : " + randomCaseExit)
         this.exit.innerHTML = ">";
-        if(fogOfWar.alreadySeenCases.find(el => el == this.exit.id)) {
-            this.exit.style.color = "red";
-        }
+        //this.exit.color = "blue";
+        this.placesOfObjects.push( this.exit );
     }
     drawPotion() {
         let randomPotion = Math.floor(Math.random() * rooms.surfacesOfRoomsForSpawnObjects.length) + 1;
         this.potion = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[randomPotion]);
         console.log("potion div : " + randomPotion)
         this.potion.innerHTML = "!";
-        if(fogOfWar.alreadySeenCases.find(el => el == this.potion.id)) {
-            this.potion.style.color = "yellow";
-        }
+        this.potion.color = "yellow";
+        this.placesOfObjects.push( this.potion );
     }
 }
 

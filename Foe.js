@@ -20,25 +20,28 @@ class Foe {
         this.temp = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[random]).innerHTML;
         console.log("start foe : ", start.id);
         this.foe = document.getElementById(start.id);
-        this.foe.innerHTML = this.appearance;
-        this.foe.style.color = "green";
+        //this.foe.innerHTML = this.appearance;
+        //this.foe.style.color = "green";
     }
     move() {
         console.log("move foe");
-        let randomGoal = Math.floor(Math.random() * rooms.surfacesOfRoomsForSpawnObjects.length) + 1;
-        let goal = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[randomGoal]);
+        //let randomGoal = Math.floor(Math.random() * rooms.surfacesOfRoomsForSpawnObjects.length) + 1;
+        //let goal = document.getElementById(rooms.surfacesOfRoomsForSpawnObjects[randomGoal]);
         let directions = [-83, +1, +83, -1];
         let randomDirection = Math.floor(Math.random() * 4 - 1) + 1;
         while(document.getElementById(Number(this.foe.id) + directions[randomDirection]).innerHTML == "_"
         || document.getElementById(Number(this.foe.id) + directions[randomDirection]).innerHTML == "|"
-        || document.getElementById(Number(this.foe.id) + directions[randomDirection]).innerHTML == "") {
+        || document.getElementById(Number(this.foe.id) + directions[randomDirection]).innerHTML == ""
+        || document.getElementById(Number(this.foe.id) + directions[randomDirection]).innerHTML == "@"
+        || document.getElementById(Number(this.foe.id) + directions[randomDirection]).innerHTML == "O") {
             randomDirection = Math.floor(Math.random() * 4 - 1) + 1;   
         }
         this.foe.innerHTML = this.temp;
+        console.log("actual temp innerHTML foe : " + this.temp);
         this.temp = document.getElementById(Number(this.foe.id) + directions[randomDirection]).innerHTML;
         this.foe = document.getElementById(Number(this.foe.id) + directions[randomDirection]);
-        this.foe.innerHTML = this.appearance;
-        this.foe.style.color = "green";    
+        //this.foe.innerHTML = this.appearance;
+        //this.foe.style.color = "green";    
     }
 }
 

@@ -9,6 +9,30 @@ class FogOfWar {
         this.fog = [];
         this.alreadySeenCases = [];
     }
+    drawMonsters(pieceOfFog) {
+        //console.log("tour manager places of foes in fog of wars : ", tourManager.placesOfFoes);
+        for(const foe of tourManager.placesOfFoes) {
+            if(foe.foe.id == pieceOfFog.id) {
+                console.log("id ok !!!");
+                foe.foe.innerHTML = foe.appearance;
+                foe.foe.style.color = foe.color;
+            }
+        }
+        // for(const place of tourManager.placesOfMonsters) {
+        //     if(place.id == pieceOfFog.id) {
+        //         place.innerHTML = "O";
+        //         place.style.color = "green";
+        //     }
+        // }
+    }
+    drawObjects(pieceOfFog) {
+        //console.log("objects in fog of war : ", objects.placesOfObjects);
+        for(const object of objects.placesOfObjects) {
+            if(object.id == pieceOfFog.id) {
+                object.style.color = object.color;
+            }
+        }   
+    }
     render() {
         // for(const el of this.casesOfRoads) {
         //     document.getElementById(el).style.color = "grey";
@@ -59,11 +83,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
+                pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -83,12 +107,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -106,12 +129,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -130,12 +152,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -153,12 +174,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -177,12 +197,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -200,12 +219,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -224,12 +242,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -247,12 +264,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -271,12 +287,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -294,12 +309,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -318,12 +332,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -341,12 +354,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -365,12 +377,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -388,12 +399,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
@@ -413,12 +423,11 @@ class FogOfWar {
                 this.alreadySeenCases.push(pieceOfFog.id);
             }
             if(visible) {
-                if(pieceOfFog.style.color == "") {
-                    pieceOfFog.style.color = "white";
-                }
                 pieceOfFog.style.color = "white";
                 this.fog.push(pieceOfFog.id);
                 this.alreadySeenCases.push(pieceOfFog.id);
+                this.drawMonsters(pieceOfFog);
+                this.drawObjects(pieceOfFog);
             }
         }
         visible = true;
